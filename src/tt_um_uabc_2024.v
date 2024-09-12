@@ -20,7 +20,7 @@ module tt_um_uabc_2024 #( parameter MAX_COUNT = 24'd10_000_000 ) (
     assign uio_oe = 8'b11111111;
 
     // put bottom 8 bits of second counter out on the bidirectional gpio
-    assign uio_out = second_counter[7:0];
+    assign uio_out = second_counter['sd7:'sd0];
 
     // external clock is 10MHz, so need 24 bit counter
     reg [23:0] second_counter;
